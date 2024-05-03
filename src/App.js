@@ -1,19 +1,26 @@
-import React from 'react';
-import Routing from "./Routing";
-import Home from './Home';
-import { BrowserRouter as Router } from 'react-router-dom';
-import About from './About';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// App.js
+import React, { useState } from 'react';
+import Form from './Form';
+import Table from './Table';
+import MyComponent from './Api';
+import MyPromise from './Promise';
 
-export default function App() {
+const App = () => {
+  const [tableData, setTableData] = useState([]);
+
+  const handleAdd = (formData) => {
+    setTableData([...tableData, formData]);
+  };
+
+
   return (
-    <Router>
-      <Home />
-    
-      <Routing />
-    </Router>
-    
-  )
-}
-
-  
+    <div>
+      <h1>Form and Table Example</h1>
+      {/* <Form /> */}
+      {/* <Table data={tableData} /> */}
+      {/* <MyComponent /> */}
+      <MyPromise />
+    </div>
+  );
+};
+export default App;
